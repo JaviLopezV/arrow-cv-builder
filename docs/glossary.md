@@ -1,0 +1,35 @@
+# Glosario
+
+- **TypeScript:** JavaScript con tipos comprobados antes de ejecutar.
+- **type:** alias de una forma o conjunto de valores; desaparece del runtime.
+- **interface:** otra forma de describir objetos; no se usa actualmente.
+- **generic:** parámetro de tipo, como `useState<CvData>`.
+- **union:** uno entre varios tipos, como `CvData | null`.
+- **literal type:** valor exacto permitido, como `"es"`.
+- **props:** entradas que un componente recibe del padre.
+- **state:** datos React que provocan render al actualizarse.
+- **hook:** función React como `useState` o `useEffect`.
+- **custom hook:** hook creado por la app; no existe ninguno salvo el wrapper de Context `useI18n`.
+- **Context:** canal React para datos globales sin pasar props nivel a nivel.
+- **Client Component:** componente con `"use client"`, ejecutable/interactivo en navegador.
+- **Server Component:** componente App Router renderizado en servidor/build por defecto.
+- **App Router:** routing de Next basado en `app/`.
+- **hydration:** React conecta eventos/estado cliente al HTML inicial.
+- **localStorage:** almacenamiento persistente de strings en un origin.
+- **SSR:** renderizado por petición en servidor; las rutas actuales se generan estáticamente.
+- **CSR:** actualización/render interactivo en el navegador.
+- **static rendering:** HTML generado durante build.
+- **build:** compilación, validación y optimización de producción.
+- **lint:** análisis de calidad y convenciones sin ejecutar la app.
+- **type guard:** función que valida runtime y estrecha un tipo.
+- **narrowing:** reducción de `unknown`/union mediante comprobaciones.
+- **A4 viewport:** contenedor que muestra visualmente la hoja física escalada.
+- **breakpoint:** ancho a partir del que cambia el layout.
+- **responsive:** adaptación de UI al espacio disponible.
+- **`sx`:** prop de estilos de Material UI conectada al tema.
+- **i18n:** internacionalización; selección de textos por idioma.
+- **fixture:** datos de ejemplo estables, como `sampleEs`.
+- **Blob:** objeto binario usado para descargar JSON localmente.
+- **metadata:** título/descripción declarados por rutas de Next.
+- **environment variable:** configuración externa al código; `NEXT_PUBLIC_` puede ser pública.
+- **immutable update:** crear objetos/arrays nuevos en vez de mutarlos.

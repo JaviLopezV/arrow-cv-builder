@@ -1,0 +1,513 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 0;
+}
+body {
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(212, 63, 120, 0.14),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(112, 36, 87, 0.12),
+      transparent 34rem
+    ),
+    linear-gradient(145deg, #fbf8fb 0%, #f3edf4 52%, #eee8f2 100%);
+  background-attachment: fixed;
+  color: #2f2437;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding-bottom: 40px;
+  min-width: 0;
+  position: relative;
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(71, 29, 62, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 29, 62, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.app-topbar {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.cv-preview-viewport {
+  width: 100%;
+  min-width: 0;
+}
+.cv-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+.cv-page-frame {
+  position: relative;
+  width: calc(210mm * var(--preview-scale, 1));
+  height: calc(297mm * var(--preview-scale, 1));
+  flex: none;
+}
+.cv-page {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 210mm;
+  min-height: 297mm;
+  height: 297mm;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+  box-shadow:
+    0 24px 60px rgba(49, 24, 47, 0.18),
+    0 3px 10px rgba(49, 24, 47, 0.08);
+  transform: scale(var(--preview-scale, 1));
+  transform-origin: top left;
+}
+.cv-header {
+  padding: 10mm 12mm 6mm 12mm;
+  color: #fff;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--magenta) 100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10mm;
+  align-items: start;
+}
+.cv-header--with-photo {
+  grid-template-columns: 24mm minmax(0, 1fr) auto;
+  gap: 6mm;
+  align-items: center;
+}
+.cv-photo {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.cv-photo--classic {
+  width: 24mm;
+  height: 24mm;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+.cv-name {
+  font-size: 31px;
+  font-weight: 850;
+  margin: 0;
+  line-height: 1.03;
+  letter-spacing: -0.5px;
+}
+.cv-role {
+  font-size: 18px;
+  font-weight: 750;
+  margin-top: 5px;
+}
+.cv-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+.cv-tag {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 7.9px;
+  font-weight: 750;
+  background: rgba(255, 255, 255, 0.08);
+}
+.cv-header-links {
+  font-size: 8.35px;
+  line-height: 1.62;
+  text-align: right;
+  max-width: 68mm;
+  overflow-wrap: anywhere;
+  margin-top: 1px;
+}
+.cv-header-links a {
+  color: #fff;
+  text-decoration: none;
+}
+.cv-content {
+  display: grid;
+  grid-template-columns: 60mm 1fr;
+  gap: 8mm;
+  padding: 8.4mm 11mm 8.5mm 11mm;
+}
+.cv-sidebar {
+  border-right: 1px solid var(--line);
+  padding-right: 6.2mm;
+}
+.cv-main {
+  min-width: 0;
+}
+.cv-section {
+  margin-bottom: 5.35mm;
+}
+.cv-section-title {
+  font-size: 11.15px;
+  font-weight: 850;
+  color: var(--magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  margin: 0 0 2.65mm 0;
+}
+.cv-section p {
+  font-size: 8.75px;
+  line-height: 1.42;
+  margin: 0 0 2.1mm 0;
+}
+.cv-section ul {
+  margin: 1.7mm 0 0 4.35mm;
+  padding: 0;
+}
+.cv-section li {
+  font-size: 8.45px;
+  line-height: 1.34;
+  margin-bottom: 0.9mm;
+}
+.cv-item {
+  margin-bottom: 5mm;
+}
+.cv-item-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 1.75mm;
+}
+.cv-company {
+  font-size: 12px;
+  font-weight: 850;
+  color: var(--purple);
+  margin-bottom: 0.9mm;
+}
+.cv-position {
+  font-size: 9.65px;
+  font-weight: 750;
+}
+.cv-date {
+  font-size: 8.55px;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 1px;
+}
+.cv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.42mm;
+}
+.cv-chip {
+  font-size: 7.45px;
+  padding: 1.15mm 2.05mm;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--purple);
+  border: 1px solid var(--soft-border);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+}
+.cv-side-block {
+  margin-bottom: 3.85mm;
+}
+.cv-side-label,
+.cv-project-title {
+  font-size: 8.95px;
+  font-weight: 850;
+  color: var(--purple);
+  margin-bottom: 0.9mm;
+}
+.cv-project-text {
+  font-size: 8.45px;
+  line-height: 1.38;
+  color: var(--text);
+}
+
+/* Magna: editorial two-panel layout inspired by the supplied reference CV. */
+.cv-page--magna {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.magna-left,
+.magna-right {
+  min-width: 0;
+  height: 297mm;
+  overflow: hidden;
+}
+.magna-left {
+  padding: 17mm 15mm 12mm 24mm;
+  background: color-mix(in srgb, var(--purple) 18%, white);
+}
+.magna-right {
+  padding: 13mm 19mm 10mm 13mm;
+  background: color-mix(in srgb, var(--magenta) 14%, white);
+}
+.magna-portrait {
+  width: 43mm;
+  height: 57mm;
+  margin: 0 auto 4mm;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: color-mix(in srgb, white 62%, var(--soft));
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+.magna-portrait--photo {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.magna-name {
+  max-width: 64mm;
+  margin: 0 0 7mm;
+  font-size: 28px;
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  overflow-wrap: anywhere;
+}
+.magna-rule {
+  height: 0;
+  border-top: 1.25px solid var(--purple);
+  margin-bottom: 4mm;
+}
+.magna-role {
+  margin-bottom: 5mm;
+  font-size: 12.5px;
+  line-height: 1.08;
+  font-weight: 750;
+}
+.cv-page--magna .cv-section {
+  margin-bottom: 3.5mm;
+}
+.cv-page--magna .cv-section-title,
+.magna-contact h2 {
+  color: var(--purple);
+  text-transform: none;
+  letter-spacing: -0.25px;
+  font-size: 19px;
+  line-height: 1.05;
+  font-weight: 750;
+  padding-bottom: 3.5mm;
+  margin: 0 0 4mm;
+  border-bottom: 1.25px solid var(--magenta);
+}
+.magna-left .cv-section-title {
+  font-size: 12px;
+  padding: 0;
+  margin-bottom: 2mm;
+  border: 0;
+}
+.cv-page--magna .cv-section p,
+.cv-page--magna .cv-section li,
+.cv-page--magna .cv-project-text {
+  color: var(--text);
+  font-size: 7.7px;
+  line-height: 1.34;
+}
+.cv-page--magna .cv-section ul {
+  margin-left: 4mm;
+}
+.cv-page--magna .cv-item {
+  margin-bottom: 3.2mm;
+}
+.cv-page--magna .cv-item-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1.7mm;
+}
+.cv-page--magna .cv-company {
+  color: var(--purple);
+  font-size: 10.5px;
+  line-height: 1.1;
+  margin: 0;
+}
+.cv-page--magna .cv-position {
+  font-size: 9.5px;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 0.7mm;
+}
+.cv-page--magna .cv-date {
+  order: -1;
+  padding: 0;
+  color: var(--text);
+  font-size: 9.5px;
+  line-height: 1.15;
+  font-weight: 750;
+  text-align: left;
+  white-space: normal;
+}
+.cv-page--magna .cv-chips {
+  gap: 1mm;
+}
+.cv-page--magna .cv-chip {
+  padding: 0;
+  color: var(--purple);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 8px;
+}
+.cv-page--magna .cv-chip:not(:last-child)::after {
+  content: " ·";
+}
+.cv-page--magna .cv-side-block {
+  margin-bottom: 2.6mm;
+}
+.cv-page--magna .cv-side-label,
+.cv-page--magna .cv-project-title {
+  color: var(--purple);
+  font-size: 8.9px;
+  margin-bottom: 0.6mm;
+}
+.magna-contact {
+  margin-top: 4mm;
+  font-size: 8.6px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.magna-contact h2 {
+  font-size: 19px;
+  margin-bottom: 3mm;
+}
+.magna-contact a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@media (max-width: 599.95px) {
+  .app-shell {
+    padding-bottom: 0;
+  }
+  .MuiAccordion-root,
+  .MuiAccordionSummary-root,
+  .MuiAccordionSummary-content,
+  .MuiAccordionDetails-root,
+  .MuiPaper-root,
+  .MuiGrid-item {
+    min-width: 0;
+  }
+  /* MUI Grid v5 implements spacing with negative outer margins. On a 320 px
+     viewport those margins escape the container, so neutralize them on phones. */
+  .MuiGrid-container {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .MuiButton-root {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .screen-only {
+    display: none !important;
+  }
+  .app-shell,
+  .MuiContainer-root,
+  .wizard-content,
+  .export-step,
+  .layout-grid,
+  .print-area {
+    display: block !important;
+    width: 210mm !important;
+    max-width: 210mm !important;
+    min-width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  /* MUI Stack keeps sibling spacing even when screen-only children are hidden.
+     On an exact-height A4 page those few pixels create a second blank sheet. */
+  .wizard-content > *,
+  .export-step > * {
+    margin-top: 0 !important;
+  }
+  .layout-grid {
+    flex-basis: auto !important;
+    transform: none !important;
+  }
+  .print-area {
+    flex: none !important;
+    flex-basis: auto !important;
+  }
+  .cv-preview {
+    display: block;
+    gap: 0;
+    width: 210mm !important;
+  }
+  .cv-preview-viewport,
+  .cv-page-frame {
+    display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+  }
+  .cv-page {
+    position: static !important;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+    transform: none !important;
+  }
+  .cv-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
