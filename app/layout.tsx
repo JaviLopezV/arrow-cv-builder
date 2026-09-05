@@ -1,3 +1,4 @@
+import SiteLoader from "./site-loader";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
+        <SiteLoader />
         <I18nProvider>
           {children}
           <LegalFooter />
