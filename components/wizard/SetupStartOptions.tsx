@@ -39,10 +39,10 @@ export default function SetupStartOptions(props: Props) {
   const { t } = useI18n();
   return (
     <Box>
-      <Typography variant="h6" fontWeight={850} gutterBottom>
+      <Typography variant="h6" fontWeight={850} gutterBottom textAlign="center">
         {t.howStart}
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="center">
         {props.options.map((option) => (
           <Grid item xs={12} sm={6} key={option.mode}>
             <Card

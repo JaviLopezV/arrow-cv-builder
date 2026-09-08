@@ -23,7 +23,7 @@ export default function TemplateStep(props: Props) {
       spacing={3}
       sx={{ maxWidth: 1000, width: "100%", mx: "auto", pb: 4 }}
     >
-      <Box>
+      <Box sx={{ textAlign: "center" }}>
         <Typography
           variant="h3"
           fontWeight={950}

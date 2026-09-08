@@ -130,6 +130,8 @@ export default function CvWizard() {
         <Stack
           className="wizard-content"
           spacing={{ xs: 1.5, md: 2.5 }}
+          useFlexGap
+          alignItems="center"
           sx={{ position: "relative", zIndex: 1, pt: { xs: 1.5, md: 2.5 } }}
         >
           <WizardHeader activeStep={step} />

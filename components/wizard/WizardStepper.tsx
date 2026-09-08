@@ -19,6 +19,7 @@ export default function WizardStepper({
       <Box
         sx={{
           display: { xs: "block", sm: "none" },
+          textAlign: "center",
           my: 1.25,
           px: 1.5,
           py: 1,
@@ -36,6 +37,9 @@ export default function WizardStepper({
         alternativeLabel
         sx={{
           display: { xs: "none", sm: "flex" },
+          width: "100%",
+          maxWidth: 900,
+          mx: "auto",
           py: { sm: 2, md: 2.5 },
           "& .MuiStepLabel-label": { fontWeight: 700, mt: 0.75 },
           "& .MuiStepLabel-label.Mui-active, & .MuiStepLabel-label.Mui-completed":

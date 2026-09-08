@@ -23,7 +23,10 @@ export default function EditorStep(props: Props) {
   const { t } = useI18n();
   const [mobileView, setMobileView] = useState<"edit" | "preview">("edit");
   return (
-    <Stack spacing={2} sx={{ minWidth: 0, pb: { xs: 8, lg: 0 } }}>
+    <Stack
+      spacing={2}
+      sx={{ width: "100%", minWidth: 0, pb: { xs: 8, lg: 0 } }}
+    >
       <Box
         className="screen-only mobile-view-switcher"
         sx={{
@@ -103,7 +106,7 @@ export default function EditorStep(props: Props) {
             minWidth: 0,
           }}
         >
-          <Box className="screen-only" sx={{ mb: 1 }}>
+          <Box className="screen-only" sx={{ mb: 1, textAlign: "center" }}>
             <Typography variant="h6" fontWeight={900}>
               {t.preview}
             </Typography>

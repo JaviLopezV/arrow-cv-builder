@@ -74,6 +74,7 @@ export default function SetupStep(props: Props) {
     <Paper
       elevation={0}
       sx={{
+        width: "100%",
         maxWidth: 900,
         mx: "auto",
         mb: 3,
@@ -96,7 +97,7 @@ export default function SetupStep(props: Props) {
             {t.learnMore}
           </Link>
         </Alert>
-        <Box>
+        <Box sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
             fontWeight={950}
@@ -112,7 +113,14 @@ export default function SetupStep(props: Props) {
             {t.step} 1 {t.of} 4 · {t.setupIntro}
           </Typography>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 440,
+            alignSelf: "center",
+            textAlign: "center",
+          }}
+        >
           <Typography variant="h6" fontWeight={850} gutterBottom>
             {t.cvLanguage}
           </Typography>
@@ -135,7 +143,7 @@ export default function SetupStep(props: Props) {
           onFileChange={handleFile}
         />
         {props.error && <Alert severity="error">{props.error}</Alert>}
-        <Stack direction="row" justifyContent="flex-end">
+        <Stack direction="row" justifyContent="center">
           <Button
             fullWidth
             variant="contained"

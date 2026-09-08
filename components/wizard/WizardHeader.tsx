@@ -16,6 +16,7 @@ export default function WizardHeader({
       className="screen-only app-topbar"
       elevation={0}
       sx={{
+        width: "100%",
         px: { xs: 1.5, sm: 2.5 },
         pt: 1,
         borderRadius: 3,

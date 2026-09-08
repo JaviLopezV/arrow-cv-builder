@@ -30,11 +30,12 @@ export default function ExportStep(props: Props) {
     <Stack
       className="export-step"
       spacing={2}
-      sx={{ maxWidth: 1050, mx: "auto", pb: 5 }}
+      sx={{ width: "100%", maxWidth: 1050, mx: "auto", pb: 5 }}
     >
       <Box
         className="screen-only"
         sx={{
+          textAlign: "center",
           p: { xs: 2, sm: 2.5 },
           borderRadius: 3,
           border: "1px solid",
