@@ -4,6 +4,7 @@ import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import LegalFooter from "@/components/LegalFooter";
 
+// Metadata for the application
 export const metadata: Metadata = {
   title: "Next CV Builder",
   description:
