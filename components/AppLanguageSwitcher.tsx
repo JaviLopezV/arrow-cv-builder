@@ -1,8 +1,8 @@
 "use client";
 
 import { Stack, Typography } from "@jlopvil/mui-kit";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { useI18n } from "@/lib/i18n";
+import { FormControl, MenuItem, Select } from "@mui/material";
+import { useI18n, type AppLanguage } from "@/lib/i18n";
 
 export default function AppLanguageSwitcher() {
   const { language, setLanguage, t } = useI18n();
@@ -21,23 +21,17 @@ export default function AppLanguageSwitcher() {
       >
         {t.appLanguage}
       </Typography>
-      <ToggleButtonGroup
-        exclusive
-        size="small"
-        value={language}
-        onChange={(_, next) => next && setLanguage(next)}
-        aria-label={t.appLanguage}
-      >
-        <ToggleButton value="es" aria-label="Español">
-          ES
-        </ToggleButton>
-        <ToggleButton value="en" aria-label="English">
-          EN
-        </ToggleButton>
-        <ToggleButton value="ca" aria-label="Català">
-          CA
-        </ToggleButton>
-      </ToggleButtonGroup>
+      <FormControl size="small" sx={{ minWidth: 120 }}>
+        <Select
+          value={language}
+          onChange={(event) => setLanguage(event.target.value as AppLanguage)}
+          inputProps={{ "aria-label": t.appLanguage }}
+        >
+          <MenuItem value="es">{t.spanish}</MenuItem>
+          <MenuItem value="en">{t.english}</MenuItem>
+          <MenuItem value="ca">{t.catalan}</MenuItem>
+        </Select>
+      </FormControl>
     </Stack>
   );
 }

@@ -1,5 +1,6 @@
 import { CvData, CvSection, Language } from "./types";
-import { sampleCa, sampleEn, sampleEs, themePresets } from "./sampleData";
+import { sampleEn, sampleEs, themePresets } from "./sampleData";
+import { sampleCa } from "./sampleCa";
 import { DEFAULT_TEMPLATE_ID, templatePresets } from "./templates";
 export { CV_STORAGE_KEY } from "./localData";
 

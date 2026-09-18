@@ -111,7 +111,8 @@ next-cv-builder/
     CvEditor.tsx      # Editor Material UI
     CvPreview.tsx     # Render del CV imprimible
   lib/
-    sampleData.ts     # Datos de ejemplo ES/EN/CA y temas
+    sampleData.ts     # Datos de ejemplo ES/EN y temas
+    sampleCa.ts       # Datos de ejemplo CA
     types.ts          # Tipos TypeScript
   package.json
   README.md
