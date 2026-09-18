@@ -32,7 +32,7 @@ classDiagram
 
 ## `CvData`
 
-- `language: "es" | "en"`: idioma base del contenido.
+- `language: "es" | "en" | "ca"`: idioma base del contenido.
 - `pageCount: number`: páginas A4 a renderizar.
 - `templateId: string`: referencia a `templatePresets`; define la estructura visual.
 - `themeId: string`: referencia a `themePresets`.

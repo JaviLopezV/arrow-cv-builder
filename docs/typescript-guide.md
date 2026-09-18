@@ -13,7 +13,7 @@ TypeScript añade comprobaciones durante desarrollo/build. El navegador recibe J
 Ejemplo real:
 
 ```ts
-export type Language = "es" | "en";
+export type Language = "es" | "en" | "ca";
 ```
 
 En JavaScript sería solo una convención. El `union type` impide `language = "fr"` hasta ampliar el modelo. `Column` y `SectionKind` funcionan igual. No hay `enum` ni `interface` en el proyecto; se usan alias `type`.

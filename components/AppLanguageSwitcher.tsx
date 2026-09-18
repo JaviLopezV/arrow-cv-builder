@@ -34,6 +34,9 @@ export default function AppLanguageSwitcher() {
         <ToggleButton value="en" aria-label="English">
           EN
         </ToggleButton>
+        <ToggleButton value="ca" aria-label="Català">
+          CA
+        </ToggleButton>
       </ToggleButtonGroup>
     </Stack>
   );

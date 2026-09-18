@@ -15,7 +15,7 @@ export default function PrivacyPageContent({
   const { language } = useI18n();
   const copy = privacyCopy[language];
   const formattedDate = new Intl.DateTimeFormat(
-    language === "es" ? "es-ES" : "en-GB",
+    { es: "es-ES", en: "en-GB", ca: "ca-ES" }[language],
     { dateStyle: "long", timeZone: "UTC" },
   ).format(new Date(`${PRIVACY_LAST_UPDATED}T00:00:00Z`));
   const sections = [

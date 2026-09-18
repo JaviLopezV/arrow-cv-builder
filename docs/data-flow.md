@@ -26,7 +26,7 @@ flowchart LR
 Hay dos conceptos independientes:
 
 - Idioma de UI: `I18nProvider` cambia `AppLanguage`, actualiza `<html lang>` y persiste `next-cv-builder-app-language`.
-- Idioma del CV: `SetupStep` cambia `Language`; al continuar crea/carga datos ES o EN. No traduce automáticamente texto libre ya escrito.
+- Idioma del CV: `SetupStep` cambia `Language`; al continuar crea/carga datos ES, EN o CA. No traduce automáticamente texto libre ya escrito.
 
 ## Secciones y páginas
 

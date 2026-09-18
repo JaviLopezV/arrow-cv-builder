@@ -64,6 +64,69 @@ export const privacyCopy = {
     changes:
       "La política puede actualizarse si cambia el funcionamiento técnico, los proveedores o los requisitos aplicables. La fecha de última actualización se mostrará siempre en esta página.",
   },
+  ca: {
+    title: "Política de privacitat",
+    intro:
+      "Aquesta política explica com funciona Next CV Builder i què passa amb la informació que hi introdueixes.",
+    lastUpdated: "Última actualització",
+    back: "Torna al creador de CV",
+    controllerTitle: "1. Responsable",
+    controller:
+      "Javier López Villanueva gestiona personalment aquest projecte. És un projecte personal i no hi ha cap empresa o societat darrere de l'aplicació.",
+    contact: "Contacte de privacitat",
+    noContact:
+      "Actualment no es publica cap adreça electrònica específica de privacitat a l'aplicació.",
+    infoTitle: "2. Informació que utilitza l'aplicació",
+    infoCv:
+      "Informació del CV: nom, professió o rol, etiquetes, correu electrònic, telèfon, GitHub, LinkedIn i el text que afegeixis a seccions com perfil, experiència, formació, projectes, habilitats, tecnologies i idiomes. Les seccions personalitzades admeten text lliure. L'aplicació inclou un camp opcional per a una fotografia; no inclou camps específics per a l'adreça postal, el portafolis o les certificacions, tot i que es poden introduir en camps de text lliure.",
+    infoTechnical:
+      "Informació tècnica: en visitar un web allotjat públicament es generen peticions HTTP habituals. El proveïdor d'allotjament pot tractar dades com l'adreça IP, la data i l'hora, el recurs sol·licitat, el navegador o informació de diagnòstic necessària per servir i protegir el web. El codi de l'aplicació no combina aquestes dades amb el contingut del CV.",
+    infoAnalytics:
+      "No s'han detectat Vercel Analytics, Speed Insights, Google Analytics ni altres sistemes d'analítica o seguiment al projecte.",
+    processingTitle: "3. Tractament de les dades del CV",
+    processing:
+      "El contingut del CV es processa directament al teu navegador amb React. La vista prèvia es genera al dispositiu i es pot desar una còpia de treball a l'emmagatzematge local del navegador per conservar els canvis entre sessions. No hi ha cap servidor propi ni cap base de dades que emmagatzemi una còpia del CV, i el codi no n'envia el contingut a Vercel ni a cap altre servei.",
+    serverTitle: "4. Dades enviades al servidor",
+    server:
+      "El navegador descarrega de Vercel els fitxers necessaris per executar l'aplicació. Aquestes peticions poden incloure dades tècniques habituals, com la IP i les capçaleres del navegador. El text introduït al CV no s'inclou en aquestes peticions. Els enllaços de correu, GitHub i LinkedIn del CV només obren aquestes destinacions quan l'usuari hi fa clic; l'aplicació no transmet automàticament el CV a aquests serveis.",
+    pdfTitle: "5. Generació de PDF i fitxers",
+    pdf: "Per imprimir o desar un PDF s'utilitzen window.print() i els estils d'impressió del navegador. El JSON s'importa llegint un fitxer local amb l'API del navegador i s'exporta creant un Blob descarregable al dispositiu. Cap d'aquests processos requereix pujar el CV a un servidor. El sistema d'impressió o la destinació escollida resten sota el control del navegador i del dispositiu.",
+    purposesTitle: "6. Finalitats",
+    purposes: [
+      "Crear, editar i previsualitzar el CV sol·licitat per l'usuari.",
+      "Conservar el treball entre sessions al mateix navegador.",
+      "Permetre importar i exportar les dades en JSON.",
+      "Permetre imprimir o desar el document com a PDF.",
+      "Servir, mantenir i protegir tècnicament l'aplicació pública.",
+    ],
+    legalTitle: "7. Base jurídica",
+    legal:
+      "Les operacions sobre el CV es fan per oferir la funcionalitat sol·licitada per l'usuari. Quan la normativa de protecció de dades sigui aplicable al tractament tècnic necessari per servir i protegir el web, aquest tractament es pot basar en el servei sol·licitat i en l'interès legítim de mantenir-lo segur i operatiu. No s'utilitza un consentiment genèric per justificar funcions essencials i actualment no hi ha analítica no essencial que requereixi consentiment.",
+    retentionTitle: "8. Conservació",
+    retention:
+      "La còpia local del CV roman en aquest navegador fins que l'usuari selecciona «Elimina les dades locals», esborra les dades del lloc o el navegador les elimina. L'aplicació no fixa cap termini de conservació remota perquè no manté cap còpia remota del CV. Vercel gestiona els possibles registres tècnics d'infraestructura segons la seva configuració i les seves polítiques; aquest repositori no en defineix cap termini concret.",
+    storageTitle: "9. Emmagatzematge local i galetes",
+    storage:
+      "localStorage no és una galeta. L'aplicació fa servir dues claus: next-cv-builder-data per al CV desat i next-cv-builder-app-language per a la preferència d'idioma de la interfície. No s'ha detectat ús de sessionStorage ni creació de galetes al codi. Per això no es mostra cap avís de galetes. L'opció «Elimina les dades locals» només esborra aquestes dues claus i no executa localStorage.clear().",
+    providersTitle: "10. Proveïdors i tercers",
+    providers:
+      "Vercel proporciona la infraestructura d'allotjament i pot tractar les dades tècniques necessàries per servir i protegir el web, però el codi no li envia el contingut del CV. GitHub allotja el repositori del codi font; això no el converteix en receptor del contingut dels CV. No s'han detectat altres proveïdors d'execució, API externes, autenticació, pagaments o seguiment.",
+    transfersTitle: "11. Transferències internacionals",
+    transfers:
+      "Proveïdors internacionals d'infraestructura com Vercel poden tractar dades tècniques des de diferents ubicacions segons les seves condicions, configuració i garanties aplicables. Aquesta aplicació no fa cap transferència addicional del contingut del CV a aquests proveïdors.",
+    rightsTitle: "12. Control i drets",
+    rights:
+      "L'usuari controla directament el CV emmagatzemat al seu navegador. Javier López Villanueva no pot accedir remotament a aquesta còpia, recuperar-la, modificar-la ni esborrar-la des d'un servidor. La pots eliminar amb l'opció del peu de pàgina o des de la configuració de dades del lloc del navegador. Si contactes per informació tècnica tractada en operar el web, pots exercir els drets que reconegui la normativa aplicable quan sigui possible identificar aquesta informació.",
+    securityTitle: "13. Seguretat",
+    security:
+      "S'apliquen mesures de disseny raonables per reduir l'exposició del CV, com processar-lo localment i no crear una base de dades pròpia. Cap sistema no pot garantir una seguretat absoluta. L'usuari ha de protegir l'accés al dispositiu, al navegador i als fitxers exportats.",
+    minorsTitle: "14. Menors",
+    minors:
+      "L'eina no s'adreça específicament a menors ni en demana l'edat. Si un menor la utilitza, ha d'evitar incloure informació innecessària i comptar amb l'orientació del seu representant quan correspongui.",
+    changesTitle: "15. Canvis en aquesta política",
+    changes:
+      "La política es pot actualitzar si canvien el funcionament tècnic, els proveïdors o els requisits aplicables. La data de l'última actualització es mostrarà sempre en aquesta pàgina.",
+  },
   en: {
     title: "Privacy Policy",
     intro:

@@ -132,6 +132,7 @@ export default function SetupStep(props: Props) {
           >
             <ToggleButton value="es">{t.spanish}</ToggleButton>
             <ToggleButton value="en">{t.english}</ToggleButton>
+            <ToggleButton value="ca">{t.catalan}</ToggleButton>
           </ToggleButtonGroup>
         </Box>
         <SetupStartOptions

@@ -1,5 +1,5 @@
 import { CvData, CvSection, Language } from "./types";
-import { sampleEn, sampleEs, themePresets } from "./sampleData";
+import { sampleCa, sampleEn, sampleEs, themePresets } from "./sampleData";
 import { DEFAULT_TEMPLATE_ID, templatePresets } from "./templates";
 export { CV_STORAGE_KEY } from "./localData";
 
@@ -12,7 +12,9 @@ export type CvFile = {
 const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 
 export function createSampleCv(language: Language): CvData {
-  return clone(language === "es" ? sampleEs : sampleEn);
+  return clone(
+    language === "es" ? sampleEs : language === "ca" ? sampleCa : sampleEn,
+  );
 }
 
 export function createEmptyCv(language: Language): CvData {
@@ -57,7 +59,9 @@ function isCvData(value: unknown): value is CvData {
   const data = value as Partial<CvData>;
   const personal = data.personal as Partial<CvData["personal"]> | undefined;
   if (
-    (data.language !== "es" && data.language !== "en") ||
+    (data.language !== "es" &&
+      data.language !== "en" &&
+      data.language !== "ca") ||
     !Number.isInteger(data.pageCount) ||
     Number(data.pageCount) < 1 ||
     (data.templateId !== undefined && typeof data.templateId !== "string") ||

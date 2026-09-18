@@ -101,7 +101,7 @@ function ContactLinks({
   if (!links.length) return null;
   return (
     <div className={withTitle ? "magna-contact" : "cv-header-links"}>
-      {withTitle && <h2>{data.language === "es" ? "Contacto" : "Contact"}</h2>}
+      {withTitle && <h2>{data.language === "en" ? "Contact" : "Contacte"}</h2>}
       {links.map((link) => (
         <div key={link.href}>
           <a href={link.href}>{link.label}</a>

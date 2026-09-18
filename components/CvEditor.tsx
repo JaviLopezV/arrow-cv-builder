@@ -34,7 +34,11 @@ export default function CvEditor({ data, themes, onChange, onReset }: Props) {
     });
 
   const addCustomSection = () => {
-    const spanish = data.language === "es";
+    const copy = {
+      es: ["Nueva sección", "Escribe aquí el contenido de esta sección."],
+      en: ["New section", "Write the content of this section here."],
+      ca: ["Secció nova", "Escriu aquí el contingut d'aquesta secció."],
+    }[data.language];
     onChange({
       ...data,
       sections: [
@@ -42,15 +46,11 @@ export default function CvEditor({ data, themes, onChange, onReset }: Props) {
         {
           id: `custom-${Date.now()}`,
           kind: "custom",
-          title: spanish ? "Nueva sección" : "New section",
+          title: copy[0],
           column: "main",
           page: data.pageCount,
           enabled: true,
-          body: [
-            spanish
-              ? "Escribe aquí el contenido de esta sección."
-              : "Write the content of this section here.",
-          ],
+          body: [copy[1]],
         },
       ],
     });

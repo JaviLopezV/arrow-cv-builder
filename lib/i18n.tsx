@@ -7,10 +7,11 @@ import {
 } from "./localData";
 import { ThemeProvider } from "@mui/material/styles";
 import { appTheme } from "./appTheme";
+import { caUi } from "./caUi";
 import i18next from "i18next";
 import { I18nextProvider, useTranslation } from "react-i18next";
 
-export type AppLanguage = "es" | "en";
+export type AppLanguage = "es" | "en" | "ca";
 
 export const ui = {
   es: {
@@ -30,6 +31,7 @@ export const ui = {
     cvLanguage: "Idioma del CV",
     spanish: "Español",
     english: "English",
+    catalan: "Català",
     howStart: "¿Cómo quieres empezar?",
     resume: "Continuar con mi CV",
     resumeDetail: "Tus últimos cambios guardados",
@@ -139,6 +141,7 @@ export const ui = {
     cvLanguage: "CV language",
     spanish: "Español",
     english: "English",
+    catalan: "Català",
     howStart: "How would you like to start?",
     resume: "Continue with my CV",
     resumeDetail: "Your latest saved changes",
@@ -231,6 +234,7 @@ export const ui = {
     pageHasSections:
       "Page {{page}} contains sections. Deleting it will also remove its content. Do you want to continue?",
   },
+  ca: caUi,
 } as const;
 
 type TranslationKey = keyof (typeof ui)["es"];
@@ -243,6 +247,7 @@ if (!i18next.isInitialized) {
     resources: {
       es: { translation: ui.es },
       en: { translation: ui.en },
+      ca: { translation: ui.ca },
     },
     lng: "es",
     fallbackLng: "es",
@@ -254,7 +259,8 @@ if (!i18next.isInitialized) {
 export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = window.localStorage.getItem(APP_LANGUAGE_STORAGE_KEY);
-    if (stored === "es" || stored === "en") void i18next.changeLanguage(stored);
+    if (stored === "es" || stored === "en" || stored === "ca")
+      void i18next.changeLanguage(stored);
     const handleLocalDataCleared = () => void i18next.changeLanguage("es");
     window.addEventListener(LOCAL_DATA_CLEARED_EVENT, handleLocalDataCleared);
     return () =>
@@ -273,7 +279,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
 export function useI18n() {
   const { t: translate, i18n } = useTranslation();
-  const language: AppLanguage = i18n.resolvedLanguage === "en" ? "en" : "es";
+  const language: AppLanguage =
+    i18n.resolvedLanguage === "en"
+      ? "en"
+      : i18n.resolvedLanguage === "ca"
+        ? "ca"
+        : "es";
   const t = Object.fromEntries(
     Object.keys(ui.es).map((key) => [key, translate(key)]),
   ) as unknown as I18nValue;

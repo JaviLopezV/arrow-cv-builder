@@ -14,11 +14,11 @@ La documentación completa está en [docs/README.md](./docs/README.md). Incluye 
 - Persistencia local con `localStorage`.
 - Plantilla A4 imprimible.
 - Soporte para una o varias páginas.
-- Cambio de idioma entre español e inglés.
+- Cambio de idioma entre español, inglés y catalán.
 - Selector de colores/estilo sobre una única plantilla.
 - Secciones editables y secciones personalizadas.
 - Descarga como PDF mediante `window.print()`.
-- Política de privacidad bilingüe en `/privacy`.
+- Política de privacidad en español, inglés y catalán en `/privacy`.
 - Borrado selectivo de los datos locales desde el footer.
 
 ## Privacidad y configuración
@@ -82,9 +82,9 @@ Pulsa **Añadir sección personalizada**. Se creará una sección nueva en la ú
 - Activarla o desactivarla.
 - Eliminarla.
 
-## Idioma español / inglés
+## Idioma español / inglés / catalán
 
-El selector **Idioma de salida** carga un ejemplo base en español o inglés. El contenido es editable, así que también puedes usarlo como punto de partida y modificar los textos libremente.
+El selector **Idioma del CV** carga un ejemplo base en español, inglés o catalán. El contenido es editable, así que también puedes usarlo como punto de partida y modificar los textos libremente.
 
 Importante: cambiar el idioma vuelve a cargar el contenido de ejemplo en ese idioma. Si ya has escrito contenido personalizado y quieres conservarlo, duplica el proyecto o copia tu texto antes de cambiar de idioma.
 
@@ -111,7 +111,7 @@ next-cv-builder/
     CvEditor.tsx      # Editor Material UI
     CvPreview.tsx     # Render del CV imprimible
   lib/
-    sampleData.ts     # Datos de ejemplo ES/EN y temas
+    sampleData.ts     # Datos de ejemplo ES/EN/CA y temas
     types.ts          # Tipos TypeScript
   package.json
   README.md

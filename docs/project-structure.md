@@ -15,7 +15,7 @@ components/
   PrivacyPageContent.tsx  UI bilingüe de privacidad
 lib/
   types.ts                modelo TypeScript
-  sampleData.ts           fixtures ES/EN y temas
+  sampleData.ts           fixtures ES/EN/CA y temas
   cvData.ts               crear, validar, importar y exportar
   i18n.tsx                traducciones, Context y tema MUI
   localData.ts            claves y borrado selectivo

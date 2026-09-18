@@ -1,4 +1,4 @@
-export type Language = "es" | "en";
+export type Language = "es" | "en" | "ca";
 export type Column = "sidebar" | "main";
 export type SectionKind =
   | "profile"
